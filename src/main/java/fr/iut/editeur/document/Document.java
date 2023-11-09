@@ -44,6 +44,17 @@ public class Document {
         texte = Gpart + "" + Dpart;
     }
 
+    public void inserer(int index, String insertion) {
+        if (index >= 0 && index <= texte.length()) {
+            String leftPart = texte.substring(0, index);
+            String rightPart = texte.substring(index);
+            texte = leftPart + insertion + rightPart;
+        } else {
+            // Handle the case where the index is out of bounds, or handle it as per your application requirements.
+            System.out.println("Invalid index for insertion.");
+        }
+    }
+
     public void clear(){
         texte= "";
     }
